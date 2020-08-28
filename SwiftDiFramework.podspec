@@ -5,10 +5,14 @@ Pod::Spec.new do |s|
     s.homepage          = 'https://github.com/profugocanis/SwiftDiFramework'
 
     s.author            = { 'ijk' => 'profugo.canis@gmail.com' }
-    s.license           = { :type => 'Apache-2.0', :file => 'LICENSE' }
+    s.license           = { :type => 'MIT', :file => 'LICENSE' }
 
     s.platform          = :ios
     s.source       = { :git => "https://github.com/profugocanis/SwiftDiFramework.git", :tag => "#{s.version}" }
+    s.source_files  = "SwiftyLib/**/*.{h,m,swift}"
+
+    s.ios.deployment_target = "12.0"
+    s.swift_version = "5.0"
 
 end
 
