@@ -13,7 +13,7 @@ final public class LiveData<T> {
         subject.onNext(element)
     }
     
-    public func observe<D: LiveDataDelegate>(_ sel: D?, isLifeCircle: Bool = true, isLast: Bool = true, _ callback : @escaping (D?, T) -> Void) {
+    public func observe<D: LiveDataProtocol>(_ sel: D?, isLifeCircle: Bool = true, isLast: Bool = true, _ callback : @escaping (D?, T) -> Void) {
         if isLast {
             if lastObj != nil {
                 callback(sel, lastObj!)

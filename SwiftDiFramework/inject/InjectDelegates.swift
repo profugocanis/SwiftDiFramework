@@ -29,15 +29,11 @@ public class InjectViewModel<T: ViewModelProtocol> {
                 .rootViewController?
                 .children
                 .last
-            
-            if vc == nil {
-                fatalError("View conttroler nil state")
-            }
 
             if vc is UITabBarController {
                 let tab = vc as? UITabBarController
                 tab?.viewControllers?.forEach {viewController in
-                    (viewController as? LiveDataDelegate)?
+                    (viewController as? LiveDataProtocol)?
                         .viewModelArr
                         .append(self.wrappedValue!)
                 }
@@ -47,8 +43,12 @@ public class InjectViewModel<T: ViewModelProtocol> {
             if self.wrappedValue == nil {
                 fatalError("\(T.self) nil state")
             }
+            
+            if vc == nil {
+                fatalError("View conttroler nil state")
+            }
 
-            (vc as? LiveDataDelegate)?.viewModelArr.append(self.wrappedValue!)
+            (vc as? LiveDataProtocol)?.viewModelArr.append(self.wrappedValue!)
         }
     }
 }
