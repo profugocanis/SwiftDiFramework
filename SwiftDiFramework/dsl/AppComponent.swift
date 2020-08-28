@@ -6,6 +6,10 @@ public class AppComponent {
         self.provide = Provider(components: block())
     }
     
+    public init(@BuilderComponent _ block: () -> ObjectsPrototype) {
+        self.provide = Provider(component: block())
+    }
+    
     public init() {
         
     }

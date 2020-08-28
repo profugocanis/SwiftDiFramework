@@ -25,6 +25,21 @@ public class Provider {
             }
         }
     }
+    
+    public init(component: ObjectsPrototype) {
+        switch component.type {
+        case .viewModel:
+            viewModelComponents.append(component)
+        case .repository:
+            repositoryComponents.append(component)
+        case .singelton:
+            singeltonComponents.append(component)
+        case .initSingelton:
+            initSingeltonComponents.append(component)
+        case .repositorySingelton:
+            repositorySingeltonComponents.append(component)
+        }
+    }
 
     // MARK: get
     func get<T>() -> T? {
