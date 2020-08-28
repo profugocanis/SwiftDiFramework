@@ -7,6 +7,7 @@ public class Provider {
     fileprivate var repositorySingeltonComponents: [ObjectsPrototype] = []
     fileprivate var viewModelComponents: [ObjectsPrototype] = []
     fileprivate var initSingeltonComponents: [ObjectsPrototype] = []
+    fileprivate var funComponents: [ObjectsPrototype] = []
     fileprivate var singeltonArr: [Any?] = []
 
     public init(components: [ObjectsPrototype]) {
@@ -22,6 +23,8 @@ public class Provider {
                 initSingeltonComponents.append(component)
             case .repositorySingelton:
                 repositorySingeltonComponents.append(component)
+            case .fun:
+                funComponents.append(component)
             }
         }
     }
@@ -38,13 +41,39 @@ public class Provider {
             initSingeltonComponents.append(component)
         case .repositorySingelton:
             repositorySingeltonComponents.append(component)
+        case .fun:
+            funComponents.append(component)
         }
     }
 
     // MARK: get
     func get<T>() -> T? {
         var res: T?
+        
+        funComponents.forEach {components in
+            components.fun.forEach { it in
+                let str1: String = String(describing: T.self)
+                let str2: String = String(describing: it.type.self)
+                
+                var f: Substring = str2.split(separator: ".").last ?? Substring("")
+                f.removeLast()
 
+                if str1.contains(f) {
+                    res = it.f!() as? T
+                }
+            }
+        }
+        if res != nil {return res}
+        
+        initSingeltonComponents.forEach {components in
+            components.initSingelton.forEach {it in
+               if it is T {
+                    res = it as? T
+                }
+            }
+        }
+        if res != nil {return res}
+        
         singeltonComponents.forEach {component in
             res = self.getSingelton(component)
             if res != nil { return }
@@ -75,16 +104,6 @@ public extension Provider {
         singeltonArr.forEach {it in
             if it is T {
                 res = it as? T
-            }
-        }
-
-        if res == nil {
-            initSingeltonComponents.forEach {components in
-                components.initSingelton.forEach {it in
-                    if it is T {
-                        res = it as? T
-                    }
-                }
             }
         }
 

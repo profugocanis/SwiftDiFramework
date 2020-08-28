@@ -6,7 +6,7 @@ public class Inject<T> {
     public let wrappedValue: T
 
     public init() {
-        let res: T? = SwiftDi.appComponent.provide?.get()
+        let res: T? = SwiftDi.appComponent.provider?.get()
         if res == nil {
             fatalError("\(T.self) nil state")
         }
@@ -20,7 +20,7 @@ public class InjectViewModel<T: ViewModelProtocol> {
     public lazy var wrappedValue: T? = nil
 
     public init() {
-        self.wrappedValue = SwiftDi.appComponent.provide?.getVM(T.self)!
+        self.wrappedValue = SwiftDi.appComponent.provider?.getVM(T.self)!
 
         DispatchQueue.main.async {
             let vc = UIApplication

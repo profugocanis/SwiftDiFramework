@@ -25,7 +25,7 @@ Replace `YOUR_TARGET_NAME` and then, in the `Podfile` directory, type:
 $ pod install
 ```
 
-## Use Singelton:
+## Use:
 
 ##### classes:
 ```swift

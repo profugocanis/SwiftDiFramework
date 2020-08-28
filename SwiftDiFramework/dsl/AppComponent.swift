@@ -1,24 +1,21 @@
 import Foundation
 
-public class AppComponent { 
+public class AppComponent {
+    
+    public var provider: Provider?
 
     public init(@BuilderComponent _ block: () -> [ObjectsPrototype]) {
-        self.provide = Provider(components: block())
+        self.provider = Provider(components: block())
     }
     
     public init(@BuilderComponent _ block: () -> ObjectsPrototype) {
-        self.provide = Provider(component: block())
+        self.provider = Provider(component: block())
     }
-    
-    public init() {
-        
-    }
-
-    public var provide: Provider?
 }
 
 @_functionBuilder public struct BuilderComponent {
     public static func buildBlock(_ atrs: ObjectsPrototype...) -> [ObjectsPrototype] {
+        print("ijk \(atrs)")
         return atrs
     }
 }
