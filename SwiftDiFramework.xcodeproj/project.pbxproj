@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		4C50FF31C20FEED37DDDE0C6 /* libPods-SwiftDiFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B43A3EAEBD5C87914317AA /* libPods-SwiftDiFramework.a */; };
 		863EAB2125C2E521938E5FC9 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C1E27E95742B97185ECD85 /* libPods-Example.a */; };
-		B10C90C124F986C700AB00D4 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10C90C024F986C700AB00D4 /* BaseViewModel.swift */; };
+		B10C90C124F986C700AB00D4 /* MVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10C90C024F986C700AB00D4 /* MVVMViewModel.swift */; };
 		B10C90C324F986E900AB00D4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10C90C224F986E900AB00D4 /* Utils.swift */; };
-		B10C90C524F9875900AB00D4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10C90C424F9875900AB00D4 /* BaseViewController.swift */; };
+		B10C90C524F9875900AB00D4 /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10C90C424F9875900AB00D4 /* MVVMViewController.swift */; };
 		B10C90C824F9885600AB00D4 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10C90C724F9885600AB00D4 /* ViewModelProtocol.swift */; };
 		B10F91F924F93E8B00E0AD92 /* module.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10F91F824F93E8B00E0AD92 /* module.swift */; };
 		B10F91FB24F95D3900E0AD92 /* createFun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10F91FA24F95D3900E0AD92 /* createFun.swift */; };
@@ -71,9 +71,9 @@
 		633E0D987C9DCDFAE0DCDDA1 /* Pods-SwiftDiFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDiFramework.release.xcconfig"; path = "Target Support Files/Pods-SwiftDiFramework/Pods-SwiftDiFramework.release.xcconfig"; sourceTree = "<group>"; };
 		7ED4645937F6C8CBB1B364B7 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		A2FAD082F64419AA4957E463 /* Pods-SwiftDi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDi.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDi/Pods-SwiftDi.debug.xcconfig"; sourceTree = "<group>"; };
-		B10C90C024F986C700AB00D4 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		B10C90C024F986C700AB00D4 /* MVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewModel.swift; sourceTree = "<group>"; };
 		B10C90C224F986E900AB00D4 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		B10C90C424F9875900AB00D4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B10C90C424F9875900AB00D4 /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
 		B10C90C724F9885600AB00D4 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		B10F91F824F93E8B00E0AD92 /* module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = module.swift; sourceTree = "<group>"; };
 		B10F91FA24F95D3900E0AD92 /* createFun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createFun.swift; sourceTree = "<group>"; };
@@ -131,8 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				B1509A4124F900FE00B5F364 /* LiveData.swift */,
-				B10C90C024F986C700AB00D4 /* BaseViewModel.swift */,
-				B10C90C424F9875900AB00D4 /* BaseViewController.swift */,
+				B10C90C024F986C700AB00D4 /* MVVMViewModel.swift */,
+				B10C90C424F9875900AB00D4 /* MVVMViewController.swift */,
 			);
 			path = mvvm;
 			sourceTree = "<group>";
@@ -434,14 +434,14 @@
 				B1509A4524F900FE00B5F364 /* LiveDataProtocol.swift in Sources */,
 				B1509A4924F900FE00B5F364 /* singelton.swift in Sources */,
 				B1509A4B24F900FE00B5F364 /* repository.swift in Sources */,
-				B10C90C524F9875900AB00D4 /* BaseViewController.swift in Sources */,
+				B10C90C524F9875900AB00D4 /* MVVMViewController.swift in Sources */,
 				B10C90C824F9885600AB00D4 /* ViewModelProtocol.swift in Sources */,
 				B10C90C324F986E900AB00D4 /* Utils.swift in Sources */,
 				B1509A4E24F900FE00B5F364 /* InjectedType.swift in Sources */,
 				B1509A4324F900FE00B5F364 /* Provider.swift in Sources */,
 				B1509A4824F900FE00B5F364 /* ObjectsPrototype.swift in Sources */,
 				B1509A4624F900FE00B5F364 /* SwiftDi.swift in Sources */,
-				B10C90C124F986C700AB00D4 /* BaseViewModel.swift in Sources */,
+				B10C90C124F986C700AB00D4 /* MVVMViewModel.swift in Sources */,
 				B1509A4424F900FE00B5F364 /* InjectDelegates.swift in Sources */,
 				B1509A4C24F900FE00B5F364 /* viewModels.swift in Sources */,
 				B1509A4A24F900FE00B5F364 /* repositorySingelton.swift in Sources */,

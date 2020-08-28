@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name              = 'SwiftDiFramework'
-    s.version           = '1.0.6'
+    s.version           = '1.0.7'
     s.summary           = 'A really cool SDK that logs stuff.'
     s.homepage          = 'https://github.com/profugocanis/SwiftDiFramework'
 

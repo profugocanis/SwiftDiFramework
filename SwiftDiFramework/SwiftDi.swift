@@ -17,7 +17,7 @@ public class SwiftDi {
 //git push
 //git push origin master --force
 
-//git tag 0.0.1
-//git push origin 0.0.1
+//git tag 1.0.6
+//git push origin 1.0.6
 
 //pod trunk push

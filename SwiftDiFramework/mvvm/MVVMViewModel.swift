@@ -18,7 +18,7 @@ class Schedulers {
     }
 }
 
-public class BaseViewModel: ViewModelProtocol {
+public class MVVMViewModel: ViewModelProtocol {
     let bag = DisposeBag()
     var disposableArr: [Disposable] = []
     let io = SerialDispatchQueueScheduler(qos: .background)

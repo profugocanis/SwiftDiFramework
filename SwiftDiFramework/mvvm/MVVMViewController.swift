@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 import UIKit
 
-public class BaseViewController: UIViewController, LiveDataProtocol {
+public class MVVMViewController: UIViewController, LiveDataProtocol {
     public var disposableArr: [Disposable] = []
     public var viewModelArr: [ViewModelProtocol] = []
     
@@ -28,7 +28,7 @@ public class BaseViewController: UIViewController, LiveDataProtocol {
 }
 
 // MARK: Disposable
-extension BaseViewController {
+extension MVVMViewController {
     private func clear() {
         disposableLiveData()
         
