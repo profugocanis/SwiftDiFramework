@@ -6,7 +6,7 @@ public class ObjectsPrototype {
     var repoMap: [String: InjectedType.Type] = [:]
     var repoSingeltonMap: [String: InjectedType.Type] = [:]
     var initSingelton: [Any] = []
-    var fun: [fun] = []
+    var fun: [createFunc] = []
 }
 
 enum ObjectType {

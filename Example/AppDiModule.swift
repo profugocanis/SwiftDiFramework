@@ -1,22 +1,31 @@
 import Foundation
 import SwiftDiFramework
+import RxSwift
 
 let appDiModule = AppComponent {
-//    appSingeltons
+    appSingeltons
     appModules
 }
 
 let appSingeltons = singelton {
-    A.self
-    B.self
+    C.self
+    D.self
 }
 
 let appModules = module {
-    fun(type: A.self) {
+    createFunc(type: A.self) {
         return A()
     }
     
-    fun(type: B.self) {
+    createFunc(type: B.self) {
         return B(name: "Foo")
+    }
+    
+    createFunc(type: Observable<Int>.self) {
+        return Observable<Int>.timer(RxTimeInterval.seconds(1), period: RxTimeInterval.milliseconds(100), scheduler: MainScheduler.instance)
+    }
+    
+    createFunc(type: UserRepository.self) {
+        return UserRepositoryImpl()
     }
 }

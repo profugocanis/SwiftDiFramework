@@ -38,9 +38,19 @@ final class A: InjectedType {
 
 final class B: InjectedType {
     init() {}
+    @Inject var c: C!
     func foo() -> String {
         return "class B"
     }
+}
+
+final class C: InjectedType {
+    init() {}
+    @Inject var d: D!
+}
+
+final class D: InjectedType {
+    init() {}
 }
 ```
 ##### App Modules:
@@ -58,12 +68,12 @@ let appSingeltons = singelton {
 }
 
 let appModules = module {
-    fun(type: A.self) {
-        return A()
+    fun(type: C.self) {
+        return C()
     }
     
-    fun(type: B.self) {
-        return B(name: "Foo")
+    fun(type: D.self) {
+        return D(name: "Foo")
     }
 }
 ```
