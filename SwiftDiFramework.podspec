@@ -8,11 +8,13 @@ Pod::Spec.new do |s|
     s.license           = { :type => 'MIT', :file => 'LICENSE' }
 
     s.platform          = :ios
-    s.source       = { :git => "https://github.com/profugocanis/SwiftDiFramework.git", :tag => "#{s.version}" }
-    s.source_files  = "SwiftyLib/**/*.{h,m,swift}"
+    s.source            = { :git => "https://github.com/profugocanis/SwiftDiFramework.git", :tag => "#{s.version}" }
+    s.source_files  = "SwiftDiFramework/**/*.{h,m,swift}"
 
     s.ios.deployment_target = "12.0"
     s.swift_version = "5.0"
+
+    s.dependency 'RxSwift'
 
 end
 
