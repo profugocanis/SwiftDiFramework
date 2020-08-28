@@ -1,0 +1,6 @@
+module Pods_SwiftDiFramework {
+  umbrella header "Pods-SwiftDiFramework-umbrella.h"
+
+  export *
+  module * { export * }
+}
