@@ -50,24 +50,16 @@ public class Provider {
     func get<T>() -> T? {
         var res: T?
         
-        funComponents.forEach {components in
-            components.fun.forEach { it in
-                let str1: String = String(describing: T.self)
-                let str2: String = String(describing: it.type.self)
-                
-                var f: Substring = str2.split(separator: ".").last ?? Substring("")
-                f.removeLast()
-
-                if str1.contains(f) {
-                    res = it.f!() as? T
-                }
-            }
+        funComponents.forEach {component in
+            res = getFunc(component)
+            if res != nil {return}
         }
+        
         if res != nil {return res}
         
         initSingeltonComponents.forEach {components in
             components.initSingelton.forEach {it in
-               if it is T {
+                if it is T {
                     res = it as? T
                 }
             }
@@ -92,6 +84,25 @@ public class Provider {
         }
         if res != nil {return res}
 
+        return res
+    }
+}
+
+// MARK: getFunc
+public extension Provider {
+    func getFunc<T>(_ component: ObjectsPrototype) -> T? {
+        var res: T?
+        component.fun.forEach {it in
+            let str1: String = String(describing: T.self)
+            let str2: String = String(describing: it.type.self)
+                
+                var f: Substring = str2.split(separator: ".").last ?? Substring("")
+                f.removeLast()
+
+                if str1.contains(f) {
+                    res = it.f!() as? T
+                }
+        }
         return res
     }
 }
