@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         label.textAlignment = .center
         view.addSubview(label)
         
-        print("ijk \(userRepository.name)")
+        print("ijk \(userRepository.foo())")
         
         _ = a.b.foo()
             .subscribe {it in

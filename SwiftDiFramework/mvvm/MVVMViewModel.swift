@@ -18,7 +18,7 @@ class Schedulers {
     }
 }
 
-public class MVVMViewModel: ViewModelProtocol {
+open class MVVMViewModel: ViewModelProtocol {
     let bag = DisposeBag()
     var disposableArr: [Disposable] = []
     let io = SerialDispatchQueueScheduler(qos: .background)
@@ -26,14 +26,14 @@ public class MVVMViewModel: ViewModelProtocol {
     let errorLiveData = LiveData<String>()
     private var alert: UIAlertController?
     
-    public func cleared() {
+    open func cleared() {
         disposableArr.forEach { (disposable) in
             disposable.dispose()
         }
         disposableArr.removeAll()
     }
     
-    public func errorConsumer(_ err: Error) {
+    open func errorConsumer(_ err: Error) {
         threadMain { [weak self] in
             self?.errorLiveData.onNext(err.localizedDescription)
         }

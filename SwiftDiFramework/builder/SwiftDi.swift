@@ -1,10 +1,11 @@
 import Foundation
 
 public class SwiftDi {
-    static var appComponent: AppComponent!
-    public static func configure(_ appComponent: AppComponent) {
-        self.appComponent = appComponent
-    }
+    public static let shared: SwiftDi = SwiftDi()
+    
+    public var appComponent: AppComponent!
+    
+    private init() {}
 }
 
 //https://medium.com/flawless-app-stories/create-your-own-cocoapods-library-da589d5cd270

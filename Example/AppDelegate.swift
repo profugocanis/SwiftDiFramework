@@ -5,7 +5,11 @@ import SwiftDiFramework
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        SwiftDi.configure(appDiModule)
+        
+        SwiftDiBuilder.shared
+            .configure(appDiModule)
+            .create()
+        
         return true
     }
 }

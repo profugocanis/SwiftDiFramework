@@ -5,11 +5,17 @@ import RxSwift
 let appDiModule = AppComponent {
     appSingeltons
     appModules
+    rep
 }
 
 let appSingeltons = singelton {
     C.self
     D.self
+}
+
+let rep = repositorySingelton {
+    ("UserRepository", UserRepositoryImpl.self)
+    ("UserRepository", UserRepositoryImpl.self)
 }
 
 let appModules = module {
@@ -25,7 +31,7 @@ let appModules = module {
         return Observable<Int>.timer(RxTimeInterval.seconds(1), period: RxTimeInterval.milliseconds(100), scheduler: MainScheduler.instance)
     }
     
-    createFunc(type: UserRepository.self) {
-        return UserRepositoryImpl()
-    }
+//    createFunc(type: UserRepository.self) {
+//        return UserRepositoryImpl()
+//    }
 }

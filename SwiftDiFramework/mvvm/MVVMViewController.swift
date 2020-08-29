@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 import UIKit
 
-public class MVVMViewController: UIViewController, LiveDataProtocol {
+open class MVVMViewController: UIViewController, LiveDataProtocol {
     public var disposableArr: [Disposable] = []
     public var viewModelArr: [ViewModelProtocol] = []
     

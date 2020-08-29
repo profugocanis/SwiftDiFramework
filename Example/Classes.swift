@@ -23,6 +23,7 @@ class B {
 
 final class C: InjectedType {
     init() {}
+    var t = "4444444"
 }
 
 final class D: InjectedType {
@@ -32,8 +33,12 @@ final class D: InjectedType {
 
 protocol UserRepository {
     var name: String { get }
+    func foo() -> String
 }
 
-class UserRepositoryImpl: UserRepository {
+final class UserRepositoryImpl: UserRepository, InjectedType {
+    init() {}
+    @Inject var c: C!
     var name: String = "ijk"
+    func foo() -> String {return c.t}
 }

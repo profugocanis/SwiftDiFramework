@@ -38,6 +38,8 @@
 		B1509A4C24F900FE00B5F364 /* viewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1509A4024F900FE00B5F364 /* viewModels.swift */; };
 		B1509A4D24F900FE00B5F364 /* LiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1509A4124F900FE00B5F364 /* LiveData.swift */; };
 		B1509A4E24F900FE00B5F364 /* InjectedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1509A4224F900FE00B5F364 /* InjectedType.swift */; };
+		B1DF80AA24FA4C3100DED286 /* SwiftDiBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DF80A924FA4C3100DED286 /* SwiftDiBuilder.swift */; };
+		B1DF80AC24FA4C4F00DED286 /* TargetModuleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DF80AB24FA4C4F00DED286 /* TargetModuleProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		B1509A4024F900FE00B5F364 /* viewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewModels.swift; sourceTree = "<group>"; };
 		B1509A4124F900FE00B5F364 /* LiveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveData.swift; sourceTree = "<group>"; };
 		B1509A4224F900FE00B5F364 /* InjectedType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectedType.swift; sourceTree = "<group>"; };
+		B1DF80A924FA4C3100DED286 /* SwiftDiBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDiBuilder.swift; sourceTree = "<group>"; };
+		B1DF80AB24FA4C4F00DED286 /* TargetModuleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetModuleProtocol.swift; sourceTree = "<group>"; };
 		BC4014543555E114F16934FC /* Pods-SwiftDiFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDiFramework.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDiFramework/Pods-SwiftDiFramework.debug.xcconfig"; sourceTree = "<group>"; };
 		E966E858603A1D09F08E9C1A /* Pods-SwiftDi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDi.release.xcconfig"; path = "Target Support Files/Pods-SwiftDi/Pods-SwiftDi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,11 +189,11 @@
 		B1509A2B24F900D500B5F364 /* SwiftDiFramework */ = {
 			isa = PBXGroup;
 			children = (
+				B1DF80A824FA4C1D00DED286 /* builder */,
 				B10C90C624F9884400AB00D4 /* protocols */,
 				B10C90BF24F986A000AB00D4 /* mvvm */,
 				B1509A3924F900FE00B5F364 /* dsl */,
 				B1509A3424F900FE00B5F364 /* inject */,
-				B1509A3824F900FE00B5F364 /* SwiftDi.swift */,
 				B10C90C224F986E900AB00D4 /* Utils.swift */,
 				B1509A2C24F900D500B5F364 /* SwiftDi.h */,
 				B1509A2D24F900D500B5F364 /* Info.plist */,
@@ -228,6 +232,16 @@
 				B10F91FA24F95D3900E0AD92 /* createFun.swift */,
 			);
 			path = modules;
+			sourceTree = "<group>";
+		};
+		B1DF80A824FA4C1D00DED286 /* builder */ = {
+			isa = PBXGroup;
+			children = (
+				B1509A3824F900FE00B5F364 /* SwiftDi.swift */,
+				B1DF80A924FA4C3100DED286 /* SwiftDiBuilder.swift */,
+				B1DF80AB24FA4C4F00DED286 /* TargetModuleProtocol.swift */,
+			);
+			path = builder;
 			sourceTree = "<group>";
 		};
 		CEDCA337293B1C8266A47F51 /* Frameworks */ = {
@@ -439,8 +453,10 @@
 				B10C90C324F986E900AB00D4 /* Utils.swift in Sources */,
 				B1509A4E24F900FE00B5F364 /* InjectedType.swift in Sources */,
 				B1509A4324F900FE00B5F364 /* Provider.swift in Sources */,
+				B1DF80AC24FA4C4F00DED286 /* TargetModuleProtocol.swift in Sources */,
 				B1509A4824F900FE00B5F364 /* ObjectsPrototype.swift in Sources */,
 				B1509A4624F900FE00B5F364 /* SwiftDi.swift in Sources */,
+				B1DF80AA24FA4C3100DED286 /* SwiftDiBuilder.swift in Sources */,
 				B10C90C124F986C700AB00D4 /* MVVMViewModel.swift in Sources */,
 				B1509A4424F900FE00B5F364 /* InjectDelegates.swift in Sources */,
 				B1509A4C24F900FE00B5F364 /* viewModels.swift in Sources */,
